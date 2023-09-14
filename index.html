@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="favicon.png" />
+    
+    <title>Lab Task 4</title>
+</head>
+<body>
+    <header>
+        <h1 class = "h1header">A Complete CSS Website</h1>
+        <button id="darkModeToggle" class="dark-mode-toggle">Dark Mode</button>
+        <p><br>by Donatelo S. DeVera | Web Design and Development (Laboratory)</p>
+        
+    </header>
+
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="#">CPE107</a>
+            <a href="#">CPE107L</a>
+            <a href="#">CPE143L</a>
+        </div>
+        <div class="navbar-right">
+            <a href="#">CPE 3</a>
+        </div>
+    </nav>
+
+<div class="main-container">
+        <div class="left-section">
+            <section class = "box dark-mode-section">
+                <div class="box-content">
+                <h1 class="dark-mode-section">Mapúa Malayan Colleges Mindanao.</h1>
+                <img src="mmcm.jpeg"/>
+                <h2><br>Vision</h2>
+                <h5>Mapúa Malayan Colleges Mindanao shall be a school of global standards and of great significance locally and beyond</h3>
+                <h2><br>Mission</h2>
+                <h5><br>The institute shall provide a learning environment in order for its students to acquire the attributes that will make them globally competitive & locally in-demand.</h5>
+                <h5><br>The institute shall engage in cutting edge and economically viable research, development and innovation that is relevant locally and beyond.</h5>
+                <h5><br>The institute shall provide state-of-the-art solutions to problems of industries and communities locally and beyond.</h5>
+                <h2><br>Motto</h2>
+                <h5><br>Excellence and Relevance</h5>
+            </section>
+
+            <section class = "box dark-mode-section">
+
+                <h1 class="dark-mode-section">College of Engineering and  Architecture</h1>
+                <img src="CEA.jpeg"/>
+                <p> &ensp; &ensp;Graduates of the College of Engineering and Architecture (CEA) are transformed into leaders who are inventive, globally competitive, socially responsible, and goal-oriented engineers and architects. The MapaMCM-CEA pledges to provide students with an education that instills strong moral and ethical principles while engaging in commercially viable research and innovation that is applicable both locally and globally.
+
+                    <br><br>&ensp;&ensp;At CEA, students are prepared and guided by their skilled mentors, who provide them with in-depth knowledge and excellent skill sets through outcomes-based curricula, enabling the students to access personalized learning and perform at their highest levels while meeting national and international standards.
+                    
+                    <br><br>&ensp;&ensp;Students will get the skills they need to develop cutting-edge solutions to the most difficult technological and socio-technology problems facing various businesses in this type of learning environment.</p>
+                
+                
+            </section>
+          
+        </div>
+        <div class="right-section">
+            <section class = "box dark-mode-section">
+                <h1 class="dark-mode-section">About Me</h1>
+                <img src = "Me.jpg"/>
+                <details>
+                    <summary>Info</summary>
+                    <p>This adage has become more than just words; it's a guiding light that shapes my choices and aspirations. As I stand at the threshold of my 20th year, a significant milestone marked by my birth on October 25, 2002, I find myself profoundly drawn to a life philosophy that resonates deep within: "Your life is a canvas; make sure you paint yourself a life worth living."</p>
+
+            </section>
+           
+            <section class = "box dark-mode-section">
+                <h1 class="dark-mode-section">Favorite Foods</h1>
+                <p>Lechon</p>
+                <img src="Lechon.jpg"/>
+                <p>Steak</p>
+                <img src="Steak.jpg"/>
+                <p>Cake</p>
+                <img src="Cake.jpg"/>
+            </section>
+      </div>
+
+    </div>
+    
+  
+
+</body>
+<footer class = "f1">
+    <p><br>Laboratory Task 4 - Advance CSS Styling</p>
+    <p>CPE107L Software Design Laboratory</p>
+</footer>
+<footer class = "f2">
+    <p>Copyright 2023 | Mapúa Malayan College Mindanao | All Rights Reserved</p>
+</footer>
+<script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+    const mainContainer = document.querySelector('.main-container');
+    const darkModeSections = document.querySelectorAll('.dark-mode-section');
+    const boxContents = document.querySelectorAll('.box-content');
+    const h1Headers = document.querySelectorAll('h1.dark-mode-section');
+
+    // Check if the user has a preference for dark mode
+    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    // Function to toggle dark mode
+    function toggleDarkMode() {
+        body.classList.toggle('dark-mode');
+        darkModeSections.forEach(section => {
+            section.classList.toggle('dark-mode-section');
+        });
+        boxContents.forEach(content => {
+            content.classList.toggle('dark-mode-section');
+        });
+    }
+
+    // Set initial dark mode state based on user preference
+    if (prefersDarkMode) {
+        body.classList.add('dark-mode');
+        darkModeSections.forEach(section => {
+            section.classList.add('dark-mode-section');
+        });
+        boxContents.forEach(content => {
+            content.classList.add('dark-mode-section');
+        });
+    }
+
+    // Listen for button click to toggle dark mode
+    darkModeToggle.addEventListener('click', toggleDarkMode);
+</script>
+</html>
